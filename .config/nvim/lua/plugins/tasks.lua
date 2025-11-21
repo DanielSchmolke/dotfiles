@@ -10,10 +10,11 @@ return {
       local parts = vim.split(args, "%s+")
       local _, machine, type, build_arg_1 = unpack(parts)
       local arg_index = #parts - 1 -- # is length of the thing
-      local machines = { "TD9", "TD10" }
+      -- local machines = { "TD9", "TD10" }
+      local machines = { "TD10" }
       local types = {
-        TD10 = { "standard", "LowDraft", "SlowSpeed" },
-        TD9 = { "double", "single" },
+        TD10 = { "standard", "low_draft", "slow_speed" },
+        -- TD9 = { "double", "single" },
       }
       local build_args = {
         "--fastbuild",
@@ -45,13 +46,36 @@ return {
 
     -- multi complete build command test
     vim.api.nvim_create_user_command("Build", function(opts)
-      local machine, type, build_arg_1, build_arg_2 = unpack(vim.split(opts.args, "%s"))
-      -- if not build_arg_1 then build_arg_1  = "" end
-      -- if not build_arg_2 then build_arg_2 = "" end
-      print("Args: " .. opts.args)
-      print(
-        "machine: " .. machine .. " type: " .. type .. " build_arg_1: " .. build_arg_1 .. "build_arg_2: " .. build_arg_2
-      )
+      local parts = vim.split(opts.args, "%s")
+      if #parts < 2 then
+        print("Error: missing required arguments")
+      end
+
+      local machine, type, build_arg_1, build_arg_2 = unpack(parts)
+      local command = "python scripts/build.py build --identifier "
+        .. machine
+        .. "_"
+        .. type
+        .. " "
+        .. build_arg_1
+        .. " "
+        .. build_arg_2
+
+      vim.cmd("split | terminal")
+      local buf = vim.api.nvim_create_buf(false, true)
+      vim.api.nvim_set_current_buf(buf)
+
+      local _ = vim.fn.jobstart(command, {
+        -- cwd = "C:/workspace/TD8/product",
+        term = true,
+        on_exit = function(_, code, _)
+          if code == 0 then
+            vim.keymap.set("n", "<leader>bx", ":Build " .. command, { desc = "re-execute last Build call" })
+          else
+            print("Job exited with code: " .. code)
+          end
+        end,
+      })
     end, { nargs = "*", complete = multiline })
 
     -- KSZ7
