@@ -70,7 +70,7 @@ return {
       vim.api.nvim_set_current_buf(buf)
 
       local _ = vim.fn.jobstart(command, {
-        -- cwd = "C:/workspace/TD8/product",
+        cwd = "C:/workspace/TD8/product",
         term = true,
         on_exit = function(_, code, _)
           if code == 0 then
