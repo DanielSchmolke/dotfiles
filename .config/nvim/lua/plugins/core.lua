@@ -10,16 +10,29 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "catppuccin",
     },
   },
   {
     "catppuccin",
     opts = {
+      flavor = "mocha",
       transparent_background = true,
       float = {
         transparent = true,
+        solid = false,
       },
+      -- custom_highlights = function(colors)
+      --   local u = require("catppuccin.utils.colors")
+      --
+      --   return {
+      --     CursorLine = {
+      --       -- bg = u.darken(colors.surface0, 0.14, colors.base),
+      --       -- bg = colors.mantle,
+      --       bg = "None",
+      --     },
+      --   }
+      -- end,
     },
   },
   {
