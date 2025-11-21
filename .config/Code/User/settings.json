@@ -1,0 +1,335 @@
+{
+  "explorer.confirmDragAndDrop": false,
+  "editor.accessibilitySupport": "off",
+  "workbench.iconTheme": "simple-icons",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": " 'Fira Code', 'Jetbrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "200",
+  "cmake.configureOnOpen": true,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "autopep8.args": ["--max-line-length", "120"],
+  "editor.renderWhitespace": "none",
+  "editor.stickyScroll.enabled": true,
+  "editor.guides.highlightActiveIndentation": "always",
+  "notebook.lineNumbers": "on",
+  "files.associations": {
+    "*.py": "python"
+  },
+  "editor.tokenColorCustomizations": {
+    "comments": "#6A737D"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  "editor.lineNumbers": "relative",
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "jupyter.askForKernelRestart": false,
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.errorColor": "rgba(128,32,32,0.0)",
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.5)",
+    "rgba(127,255,127,0.5)",
+    "rgba(255,127,255,0.5)",
+    "rgba(79,236,236,0.5)"
+  ],
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-shell-escape",
+        "-xelatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+  "clangd.path": "/home/daniel/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/21.1.0/clangd_21.1.0/bin/clangd",
+  "explorer.confirmDelete": false,
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.includePath": [
+    "C:\\Users\\danie\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\avr\\include",
+    "C:\\Program Files\\Raspberry Pi\\Pico SDK v1.5.1\\pico-sdk\\src\\common\\pico_stdlib\\include"
+  ],
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "workbench.colorCustomizations": {
+    "editorLineNumber.foreground": "#6A737D",
+    "editorLineNumber.activeForeground": "#ced6df",
+    "tab.activeBorder": "#ffae00"
+  },
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "sameLine",
+  "workbench.settings.applyToAllProfiles": [
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.block",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type"
+  ],
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeElse": false,
+  "C_Cpp.vcFormat.newLine.beforeCatch": false,
+  "C_Cpp.formatting": "clangFormat",
+  "editor.formatOnSave": true,
+  "cmake.showConfigureWithDebuggerNotification": false,
+  "workbench.startupEditor": "none",
+  "cmake.showOptionsMovedNotification": false,
+  "editor.tabCompletion": "on",
+  "security.workspace.trust.untrustedFiles": "open",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.clangTidy.checks.enabled": [
+    "google-*",
+    "bugprone-*",
+    "readability-*",
+    "misc-*",
+    "clang-analyzer-*",
+    "cppcoreguidelines-*",
+    "performance-*"
+  ],
+  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+  "C_Cpp.autocompleteAddParentheses": true,
+  "explorer.confirmPasteNative": false,
+  "hediet.vscode-drawio.resizeImages": null,
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "C_Cpp.clang_format_fallbackStyle": "google",
+  "makefile.configureOnOpen": true,
+  "workbench.editor.wrapTabs": true,
+  "window.density.editorTabHeight": "compact",
+  "C_Cpp.clang_format_sortIncludes": false,
+  "errorLens.messageBackgroundMode": "none",
+  "editor.tabSize": 4,
+  "cmake.additionalCompilerSearchDirs": [
+    "C:/msys64/mingw32/bin",
+    "C:/msys64/mingw64/bin",
+    "C:/msys64/clang32/bin",
+    "C:/msys64/clang64/bin",
+    "C:/msys64/clangarm64/bin",
+    "C:/msys64/ucrt64/bin"
+  ],
+  "git.confirmSync": false,
+  "editor.linkedEditing": true,
+  "workbench.colorTheme": "Visual Studio Dark - C++",
+  "errorLens.enabledDiagnosticLevels": ["error", "info"],
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-f>": false
+  },
+  "pylint.args": ["--rcfile=${workspaceFolder}/.pylintrc"],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "Cargo.toml": "Cargo.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "[cmake]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
+  "nightwatch.quickSettings.parallels": 12,
+  "svelte.enable-ts-plugin": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": false,
+    "launchpad": false
+  },
+  "remote.SSH.remotePlatform": {
+    "rp5.local": "linux",
+    "192.168.178.53": "linux"
+  },
+  "terminal.integrated.profiles.windows": {
+    "QMK_MSYS": {
+      "path": "C:/QMK_MSYS/usr/bin/bash.exe",
+      "env": {
+        "MSYSTEM": "MINGW64",
+        "CHERE_INVOKING": "1"
+      },
+      "args": ["--login"]
+    }
+  },
+  "terminal.integrated.cursorStyle": "line",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "python.analysis.typeCheckingMode": "standard",
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "git.autofetch": true,
+  "cSpell.userWords": [
+    "accesstype",
+    "appender",
+    "autoleveller",
+    "baudrate",
+    "Baumüller",
+    "blubb",
+    "bmaxx",
+    "Bootup",
+    "Brushless",
+    "bugprone",
+    "candata",
+    "CANFD",
+    "canopen",
+    "Canutils",
+    "cobid",
+    "compactpdo",
+    "cornsilk",
+    "cppcoreguidelines",
+    "createdby",
+    "creationdate",
+    "creationtime",
+    "DEFSTRUCT",
+    "DEFTYPE",
+    "DGRAM",
+    "dimgrey",
+    "dummyusage",
+    "dynamicchannelssupported",
+    "edsversion",
+    "figsize",
+    "filerevision",
+    "fileversion",
+    "filezilla",
+    "googletest",
+    "graphqlrc",
+    "groupmessaging",
+    "grrr",
+    "gtest",
+    "highlimit",
+    "ifindex",
+    "ifname",
+    "IPPROTO",
+    "lotdata",
+    "lowlimit",
+    "lsssupported",
+    "mandatoryobjects",
+    "manufacturerobjects",
+    "mbit",
+    "modificationdate",
+    "modificationtime",
+    "networkd",
+    "NODEID",
+    "NODELAY",
+    "nonblocking",
+    "nrofrxpdo",
+    "nroftxpdo",
+    "nums",
+    "objecttype",
+    "objflags",
+    "oklch",
+    "onedark",
+    "oneshot",
+    "optionalobjects",
+    "parametername",
+    "pdomapping",
+    "pdos",
+    "pico",
+    "popleft",
+    "productname",
+    "productnumber",
+    "rawmode",
+    "repr",
+    "revisionnumber",
+    "RPDO",
+    "RPDOs",
+    "rustc",
+    "RXPDO",
+    "Schmolke",
+    "sdos",
+    "Sensorless",
+    "serde",
+    "serv",
+    "setpoint",
+    "setpoints",
+    "Sfxt",
+    "shadcn",
+    "shiftdata",
+    "simplebootupmaster",
+    "simplebootupslave",
+    "skeletonlabs",
+    "socketcan",
+    "socketcand",
+    "stdlib",
+    "STRNE",
+    "subnumber",
+    "subsec",
+    "tcan",
+    "tdxsocket",
+    "TPDO",
+    "TPDOs",
+    "turbopack",
+    "TXPDO",
+    "UART",
+    "vcan",
+    "Vendorname",
+    "vendornumber",
+    "Werror",
+    "Wextra",
+    "Wpedantic",
+    "ylim",
+    "yticks"
+  ],
+  "gitlens.advanced.messages": {
+    "suppressCreatePullRequestPrompt": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svg.preview.mode": "svg",
+  "workbench.editorAssociations": {
+    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+    "*.svg": "default"
+  },
+  "raspberry-pi-pico.python3Path": "/usr/bin/python",
+  "update.showReleaseNotes": false
+}
