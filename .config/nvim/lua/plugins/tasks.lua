@@ -1,61 +1,65 @@
 return {
   "tasks",
   -- todo can we put this in the repo and just load it from here?
+  -- also, we should probably just read this stuff from the tasks.json
   dir = vim.fn.stdpath("config") .. "/lua/plugins",
   dev = true,
   -- lazy = false,
 
   config = function()
-    local function multiline(lead, args)
+    local function td10_matcher(lead, args)
       local parts = vim.split(args, "%s+")
-      local _, machine, type, build_arg_1 = unpack(parts)
+      local _, type, build_arg_1 = unpack(parts)
       local arg_index = #parts - 1 -- # is length of the thing
-      -- local machines = { "TD9", "TD10" }
-      local machines = { "TD10" }
       local types = {
-        TD10 = { "standard", "low_draft", "slow_speed" },
-        -- TD9 = { "double", "single" },
+        "standard",
+        "slow_speed",
+        "low_draft",
+      }
+      local control_units = {
+        "KSZ6",
+        "KSZ7",
       }
       local build_args = {
         "--fastbuild",
-        "--copysim",
+        "--fastbuild --copysim",
       }
 
       if arg_index == 1 then
         return vim.tbl_filter(function(item)
-          return item:find("^" .. machine)
-        end, machines)
+          return item:find("^" .. type)
+        end, types)
       elseif arg_index == 2 then
         return vim.tbl_filter(function(item)
-          return item:find("^" .. type)
-        end, types[machine])
+          return item:find("^" .. lead)
+        end, control_units)
       elseif arg_index == 3 then
         return vim.tbl_filter(function(item)
           return item:find("^" .. lead)
         end, build_args)
-      elseif arg_index == 4 then
-        local item = {}
-        if build_arg_1 == build_args[1] then
-          item[1] = build_args[2]
-        else
-          item[1] = build_args[1]
-        end
-        return item
       end
     end
 
     -- multi complete build command test
-    vim.api.nvim_create_user_command("Build", function(opts)
+    vim.api.nvim_create_user_command("BuildTD10", function(opts)
       local parts = vim.split(opts.args, "%s")
       if #parts < 2 then
         print("Error: missing required arguments")
       end
 
-      local machine, type, build_arg_1, build_arg_2 = unpack(parts)
-      local command = "python scripts/build.py build --identifier "
-        .. machine
+      local type, control_unit, build_arg_1, build_arg_2 = unpack(parts)
+      if not build_arg_1 then
+        build_arg_1 = ""
+      end
+      if not build_arg_2 then
+        build_arg_2 = ""
+      end
+
+      local command = "python scripts/build.py build --identifier TD10"
         .. "_"
         .. type
+        .. "-"
+        .. control_unit
         .. " "
         .. build_arg_1
         .. " "
@@ -76,7 +80,7 @@ return {
           end
         end,
       })
-    end, { nargs = "*", complete = multiline })
+    end, { nargs = "*", complete = td10_matcher })
 
     -- KSZ7
     vim.api.nvim_create_user_command("BuildTD10standardKSZ7", function()
