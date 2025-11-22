@@ -22,6 +22,15 @@ return {
         transparent = true,
         solid = false,
       },
+      highlight_overrides = {
+        all = function(mocha)
+          return {
+            LineNrAbove = { fg = mocha.overlay0 },
+            CursorLineNr = { fg = mocha.green },
+            LineNrBelow = { fg = mocha.overlay0 },
+          }
+        end,
+      },
       -- custom_highlights = function(colors)
       --   local u = require("catppuccin.utils.colors")
       --

@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.initial_cols = 200
+config.initial_cols = 260
 config.initial_rows = 68
 
 config.font_size = 10

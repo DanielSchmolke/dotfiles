@@ -7,9 +7,9 @@ return {
   -- lazy = false,
 
   config = function()
-    local function td10_matcher(lead, args)
+    local function td10_matcher(lead, args, cursor_pos)
       local parts = vim.split(args, "%s+")
-      local _, type, build_arg_1 = unpack(parts)
+      local _, type = unpack(parts)
       local arg_index = #parts - 1 -- # is length of the thing
       local types = {
         "standard",
@@ -26,17 +26,11 @@ return {
       }
 
       if arg_index == 1 then
-        return vim.tbl_filter(function(item)
-          return item:find("^" .. type)
-        end, types)
+        return types
       elseif arg_index == 2 then
-        return vim.tbl_filter(function(item)
-          return item:find("^" .. lead)
-        end, control_units)
+        return control_units
       elseif arg_index == 3 then
-        return vim.tbl_filter(function(item)
-          return item:find("^" .. lead)
-        end, build_args)
+        return build_args
       end
     end
 
