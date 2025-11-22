@@ -45,6 +45,21 @@ return {
     },
   },
   {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          files = { hidden = true }, -- Show hidden files in file picker
+          grep = { hidden = true }, -- Include hidden files in grep
+          explorer = { hidden = true }, -- Show hidden files in explorer
+        },
+      },
+      explorer = {
+        hidden = true, -- Show dotfiles in the explorer
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
