@@ -49,9 +49,9 @@ return {
     opts = {
       picker = {
         sources = {
-          files = { hidden = true }, -- Show hidden files in file picker
-          grep = { hidden = true }, -- Include hidden files in grep
-          explorer = { hidden = true }, -- Show hidden files in explorer
+          files = { hidden = true },
+          grep = { hidden = true },
+          explorer = { hidden = true },
         },
       },
       explorer = {
