@@ -14,7 +14,7 @@ return {
     },
   },
   {
-    "catppuccin",
+    "catppuccin/nvim",
     opts = {
       flavor = "mocha",
       transparent_background = true,
