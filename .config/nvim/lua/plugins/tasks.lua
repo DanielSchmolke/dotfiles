@@ -65,6 +65,7 @@ return {
         .. " "
         .. build_arg_2
 
+      vim.keymap.set("n", "<leader>bx", ":Build " .. command, { desc = "re-execute last Build call" })
       vim.cmd("split | terminal")
       local buf = vim.api.nvim_create_buf(false, true)
       vim.api.nvim_set_current_buf(buf)
@@ -72,13 +73,7 @@ return {
       local _ = vim.fn.jobstart(command, {
         cwd = "C:/workspace/TD8/product",
         term = true,
-        on_exit = function(_, code, _)
-          if code == 0 then
-            vim.keymap.set("n", "<leader>bx", ":Build " .. command, { desc = "re-execute last Build call" })
-          else
-            print("Job exited with code: " .. code)
-          end
-        end,
+        on_exit = function(_, _, _) end,
       })
     end, { nargs = "*", complete = td10_matcher })
 
